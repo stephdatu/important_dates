@@ -1,0 +1,16 @@
+<h2>New Entry</h2>
+<%= form_for(@entry) do |f| %>
+  <p>
+    <%= f.label :day, "Event Date" %><br />
+    <%= f.date_select :day %>
+  </p>
+  <p>
+    <%= f.label :event %><br />
+    <%= f.text_field :event %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <%= f.submit %>
+<% end %>
