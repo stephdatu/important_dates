@@ -1,8 +1,25 @@
-<%= link_to "New Entry", new_entry_path %>
+<h1>Important Dates</h1>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Event</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<h2>Entries</h2>
-<ul>
-  <% @entries.each do |entry| %>
-    <li><%= link_to entry.event, entry %></li>
-  <% end %>
-</ul>
+<% @entries.each do |entry| %>
+  <tr>
+    <td><%= entry.day %></td>
+    <td><%= link_to entry.event, entry %></td>
+    <td><%= entry.description %></td>
+    <td><%= link_to 'Show', entry %></td>
+    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+    <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure you want to delete this entry?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+<%= link_to "New Entry", new_entry_path %>

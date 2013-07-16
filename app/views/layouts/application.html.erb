@@ -2,11 +2,24 @@
 <html>
 <head>
   <title><%= @title || "Important Dates" %></title>
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="topbar">
+  <div class="fill">
+    <div class="container">
+      <a class="brand" href="/">Important Dates</a>
+      <ul class="nav">
+        <li class="active"><a href="/entries">Entries</a></li>
+        <li ><%= link_to 'New Entry', new_entry_path %></li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <% flash.each do |key, value| %>
   <div class='flash' id='<%= key %>'>
@@ -14,8 +27,15 @@
   </div>
 <% end %>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
+<footer>
+  <div class="container">
+    Stephanie Datu | 2013
+  </div>
+</footer>
 
 </body>
 </html>
