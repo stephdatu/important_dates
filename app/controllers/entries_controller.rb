@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+before_filter :find_entry, :only => [:show, :edit, :update, :destroy]
 
   def index
     @entries = Entry.all
@@ -20,15 +21,12 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entry = Entry.find(params[:id])
   end
 
   def edit
-    @entry = Entry.find(params[:id])
   end
 
   def update
-    @entry = Entry.find(params[:id])
     if @entry.update_attributes(params[:entry])
       flash[:notice] = "Entry has been updated."
       redirect_to @entry
@@ -39,9 +37,16 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    @entry = Entry.find(params[:id])
     @entry.destroy
     flash[:notice] = "Entry has been deleted."
     redirect_to entries_path
   end
+
+  private
+    def find_entry
+      @entry = Entry.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "The entry you were looking for could not be found."
+      redirect_to entries_path
+    end
 end
