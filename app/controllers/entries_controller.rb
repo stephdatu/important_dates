@@ -37,4 +37,11 @@ class EntriesController < ApplicationController
       render :action => "edit"
     end
   end
+
+  def destroy
+    @entry = Entry.find(params[:id])
+    @entry.destroy
+    flash[:notice] = "Entry has been deleted."
+    redirect_to entries_path
+  end
 end
