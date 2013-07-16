@@ -13,7 +13,8 @@ class EntriesController < ApplicationController
       flash[:notice] = "Entry has been created."
       redirect_to @entry
     else
-      # nothing, yet
+      flash[:alert] = "Entry has not been created."
+      render :action => "new"
     end
   end
 

@@ -1,5 +1,6 @@
 <h2>New Entry</h2>
 <%= form_for(@entry) do |f| %>
+<%= f.error_messages %>
   <p>
     <%= f.label :day, "Event Date" %><br />
     <%= f.date_select :day %>
