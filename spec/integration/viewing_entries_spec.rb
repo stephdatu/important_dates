@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Viewing entries" do
+feature "Viewing Entries" do
   scenario "Listing all entries" do
     entry = Factory.create(:entry, :event => "Dinner")
     visit '/'
