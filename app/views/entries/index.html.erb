@@ -9,9 +9,9 @@
     <th></th>
   </tr>
 
-<% @entries.each do |entry| %>
+<% @entries.each do |entry| unless entry.day < Date.today%>
   <tr>
-    <td><%= entry.day %></td>
+    <td><%= entry.day %><% end %></td>
     <td><%= link_to entry.event, entry %></td>
     <td><%= entry.description %></td>
     <td><%= link_to 'Show', entry %></td>
