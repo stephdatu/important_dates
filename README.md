@@ -14,4 +14,8 @@ Never forget an important event again with this Important Dates Microapp.
 
 
 Author: Stephanie Datu (stephdatu@gmail.com)
-HTML/CSS design source: http://guides.railsgirls.com/design/
+HTML/CSS design source: http://guides.railsgirls.com/design/  
+
+## License
+
+http://stephdatu.mit-license.org/
