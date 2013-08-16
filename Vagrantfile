@@ -12,6 +12,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise32"
 
+  config.berkshelf.enabled = true
+
+
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   # config.vm.box_url = "http://domain.com/path/to/above.box"
@@ -88,6 +91,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "build-essential"
     chef.add_recipe "apache2"
     chef.add_recipe "postgresql"
+    chef.add_recipe "ruby_build"
+    chef.add_recipe "rbenv"
+    chef.add_recipe "git"
   end
 
 

@@ -5,3 +5,6 @@ cookbook 'build-essential'
 cookbook 'apache2'
 cookbook 'postgresql'
 cookbook 'rvm', git: "https://github.com/fnichol/chef-rvm.git"
+cookbook 'ruby_build'
+cookbook 'rbenv'
+cookbook 'git'
